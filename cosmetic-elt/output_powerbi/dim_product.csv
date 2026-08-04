@@ -1,0 +1,79 @@
+﻿product_id,product_name,brand,category_id,category_name,price,stock_quantity,sold_quantity,is_active,created_at
+1,Génifique Advanced Youth Activating Serum,LANCÔME,1,Chăm Sóc Da,1250000.0,139,102,1,2026-06-04 17:01:44
+2,Facial Treatment Essence 230ml,SK-II,1,Chăm Sóc Da,2890000.0,166,82,1,2026-06-04 17:01:44
+3,Advanced Night Repair Synchronized Recovery,ESTÉE LAUDER,1,Chăm Sóc Da,1890000.0,285,114,1,2026-06-04 17:01:44
+4,Green Tea Hyaluronic Acid Hydration Toner,INNISFREE,1,Chăm Sóc Da,385000.0,34,107,1,2026-06-04 17:01:44
+5,Revitalift 1.5% Pure Hyaluronic Acid Serum,L'ORÉAL,1,Chăm Sóc Da,480000.0,345,114,1,2026-06-04 17:01:44
+6,Vital Perfection Uplifting Firming Cream,SHISEIDO,1,Chăm Sóc Da,1100000.0,4,83,1,2026-06-04 17:01:44
+7,Ultra Facial Cream SPF 30 — 125ml,KIEHL'S,1,Chăm Sóc Da,890000.0,133,84,1,2026-06-04 17:01:44
+8,Moisture Surge 100H Hydrator 75ml,CLINIQUE,1,Chăm Sóc Da,750000.0,0,102,1,2026-06-04 17:01:44
+9,Sulwhasoo First Care Activating Serum,SULWHASOO,1,Chăm Sóc Da,1680000.0,117,78,1,2026-06-04 17:01:44
+10,The Water Cream 50ml,TATCHA,1,Chăm Sóc Da,1450000.0,65,100,1,2026-06-04 17:01:44
+11,Niacinamide 10% + Zinc 1% Serum 30ml,THE ORDINARY,1,Chăm Sóc Da,230000.0,89,83,1,2026-06-04 17:01:44
+12,Lip Sleeping Mask Berry 20g,LANEIGE,1,Chăm Sóc Da,340000.0,178,94,1,2026-06-04 17:01:44
+13,Cicaplast Baume B5+ 100ml,LA ROCHE-POSAY,1,Chăm Sóc Da,420000.0,97,120,1,2026-06-04 17:01:44
+14,Hyaluronic Acid 2% + B5 Serum,THE ORDINARY,1,Chăm Sóc Da,180000.0,130,112,1,2026-06-04 17:01:44
+15,Retinol 0.5% Serum 30ml,COSRX,1,Chăm Sóc Da,320000.0,215,105,1,2026-06-04 17:01:44
+16,Vitamin C 23% Suspension,THE ORDINARY,1,Chăm Sóc Da,210000.0,72,44,1,2026-06-04 17:01:44
+17,Ceramide Moisturizing Cream 50ml,DR.JART+,1,Chăm Sóc Da,680000.0,0,39,1,2026-06-04 17:01:44
+18,Advanced Snail 96 Mucin Power Essence,COSRX,1,Chăm Sóc Da,350000.0,74,31,1,2026-06-04 17:01:44
+19,Rouge Dior Forever Lipstick 999,DIOR BEAUTY,2,Trang Điểm,1350000.0,203,24,1,2026-06-04 17:01:44
+20,Pro Filt'r Soft Matte Longwear Foundation,FENTY BEAUTY,2,Trang Điểm,890000.0,95,39,1,2026-06-04 17:01:44
+21,Pillow Talk Lipstick,CHARLOTTE TILBURY,2,Trang Điểm,780000.0,30,32,1,2026-06-04 17:01:44
+22,Radiant Creamy Concealer,NARS,2,Trang Điểm,620000.0,0,33,1,2026-06-04 17:01:44
+23,Studio Fix Fluid Foundation SPF 15,MAC COSMETICS,2,Trang Điểm,780000.0,147,25,1,2026-06-04 17:01:44
+24,Lip Glow Oil 001 Pink,DIOR BEAUTY,2,Trang Điểm,950000.0,37,22,1,2026-06-04 17:01:44
+25,Double Wear Stay-in-Place Foundation,ESTÉE LAUDER,2,Trang Điểm,1100000.0,20,34,1,2026-06-04 17:01:44
+26,Airbrush Flawless Setting Spray,CHARLOTTE TILBURY,2,Trang Điểm,850000.0,149,32,1,2026-06-04 17:01:44
+27,Stay Vulnerable Glossy Lip Balm,RARE BEAUTY,2,Trang Điểm,620000.0,247,40,1,2026-06-04 17:01:44
+28,Better Than Sex Mascara,TOO FACED,2,Trang Điểm,720000.0,163,39,1,2026-06-04 17:01:44
+29,Translucent Loose Setting Powder,LAURA MERCIER,2,Trang Điểm,890000.0,177,36,1,2026-06-04 17:01:44
+30,Shape Tape Concealer 10ml,TARTE,2,Trang Điểm,780000.0,32,45,1,2026-06-04 17:01:44
+31,N°5 Eau de Parfum 50ml — Đặc Biệt,CHANEL,3,Nước Hoa,4200000.0,54,46,1,2026-06-04 17:01:44
+32,Miss Dior Blooming Bouquet EDT 100ml,DIOR,3,Nước Hoa,3200000.0,156,30,1,2026-06-04 17:01:44
+33,Light Blue Eau de Toilette 100ml,DOLCE & GABBANA,3,Nước Hoa,2450000.0,74,35,1,2026-06-04 17:01:44
+34,Chloé Eau de Parfum 50ml,CHLOÉ,3,Nước Hoa,2800000.0,9,56,1,2026-06-04 17:01:44
+35,Black Opium EDP 90ml,YVES SAINT LAURENT,3,Nước Hoa,2800000.0,113,33,1,2026-06-04 17:01:44
+36,La Vie Est Belle Eau de Parfum 50ml,LANCÔME,3,Nước Hoa,2100000.0,1,27,1,2026-06-04 17:01:44
+37,Flowerbomb EDP 100ml,VIKTOR & ROLF,3,Nước Hoa,3100000.0,30,28,1,2026-06-04 17:01:44
+38,Olympea EDP 80ml,PACO RABANNE,3,Nước Hoa,2300000.0,170,62,1,2026-06-04 17:01:44
+39,Gucci Bloom EDP 100ml,GUCCI,3,Nước Hoa,2900000.0,151,38,1,2026-06-04 17:01:44
+40,Idôle EDP 75ml,LANCÔME,3,Nước Hoa,2500000.0,53,39,1,2026-06-04 17:01:44
+41,J'adore EDP 100ml,DIOR,3,Nước Hoa,3400000.0,6,18,1,2026-06-04 17:01:44
+42,Terre d'Hermès EDT 100ml,HERMÈS,3,Nước Hoa,2600000.0,26,29,1,2026-06-04 17:01:44
+43,Elseve Extraordinary Oil Serum,L'ORÉAL,4,Chăm Sóc Tóc,290000.0,0,24,1,2026-06-04 17:01:44
+44,Damage Remedy Restructuring Conditioner,AVEDA,4,Chăm Sóc Tóc,520000.0,36,29,1,2026-06-04 17:01:44
+45,Résistance Bain Force Architecte Shampoo,KÉRASTASE,4,Chăm Sóc Tóc,480000.0,73,39,1,2026-06-04 17:01:44
+46,Olaplex No.3 Hair Perfector,OLAPLEX,4,Chăm Sóc Tóc,680000.0,178,37,1,2026-06-04 17:01:44
+47,Purple Shampoo Blonde Care,FANOLA,4,Chăm Sóc Tóc,320000.0,358,42,1,2026-06-04 17:01:44
+48,Nutritive Masquintense Fine Hair 500ml,KÉRASTASE,4,Chăm Sóc Tóc,920000.0,120,34,1,2026-06-04 17:01:44
+49,Dry Shampoo Original 200ml,BATISTE,4,Chăm Sóc Tóc,180000.0,9,34,1,2026-06-04 17:01:44
+50,Sublimic Aqua Intensive Hair Mask,SHISEIDO,4,Chăm Sóc Tóc,780000.0,167,11,1,2026-06-04 17:01:44
+51,Moroccanoil Treatment Original 100ml,MOROCCANOIL,4,Chăm Sóc Tóc,650000.0,78,22,1,2026-06-04 17:01:44
+52,Scalp Revival Charcoal Shampoo,BRIOGEO,4,Chăm Sóc Tóc,580000.0,114,38,1,2026-06-04 17:01:44
+53,Leave-In Conditioner Shea Butter 350ml,CANTU,4,Chăm Sóc Tóc,220000.0,165,47,1,2026-06-04 17:01:44
+54,Hair Oil Nourishing 100ml,OUAI,4,Chăm Sóc Tóc,620000.0,223,47,1,2026-06-04 17:01:44
+55,Perfect UV Sunscreen Skincare Milk SPF50+,ANESSA,5,Chống Nắng,620000.0,215,48,1,2026-06-04 17:01:44
+56,Pure Screen+ Mineral Moisturizer SPF40,CLINIQUE,5,Chống Nắng,580000.0,102,39,1,2026-06-04 17:01:44
+57,Biore UV Aqua Rich Watery Essence SPF50+,BIORÉ,5,Chống Nắng,320000.0,44,30,1,2026-06-04 17:01:44
+58,Daily UV Protection Cream SPF36,INNISFREE,5,Chống Nắng,320000.0,260,28,1,2026-06-04 17:01:44
+59,UV Expert Supra Screen SPF50+,LANCÔME,5,Chống Nắng,890000.0,10,37,1,2026-06-04 17:01:44
+60,Clear Face Oil-Free Sunscreen SPF55,LA ROCHE-POSAY,5,Chống Nắng,520000.0,142,54,1,2026-06-04 17:01:44
+61,Supergoop! Unseen Sunscreen SPF40,SUPERGOOP!,5,Chống Nắng,780000.0,124,46,1,2026-06-04 17:01:44
+62,Anthelios Invisible Fluid SPF50+ 50ml,LA ROCHE-POSAY,5,Chống Nắng,450000.0,72,47,1,2026-06-04 17:01:44
+63,Water-Light Sunscreen SPF50+ 60ml,KIEHL'S,5,Chống Nắng,750000.0,118,36,1,2026-06-04 17:01:44
+64,Tinted Sunscreen SPF50 50ml,DRUNK ELEPHANT,5,Chống Nắng,850000.0,9,47,1,2026-06-04 17:01:44
+65,Suncut UV Perfect Gel SPF50+ 100g,KOSE,5,Chống Nắng,280000.0,134,40,1,2026-06-04 17:01:44
+66,Skin Aqua Tone Up UV Essence SPF50+,ROHTO MENTHOLATUM,5,Chống Nắng,190000.0,160,49,1,2026-06-04 17:01:44
+67,Shea Body Butter 200ml,THE BODY SHOP,6,Chăm Sóc Cơ Thể,420000.0,108,40,1,2026-06-04 17:01:44
+68,Almond Shower Oil 250ml,L'OCCITANE,6,Chăm Sóc Cơ Thể,520000.0,131,46,1,2026-06-04 17:01:44
+69,Cetaphil Moisturizing Cream 250ml,CETAPHIL,6,Chăm Sóc Cơ Thể,320000.0,56,5,1,2026-06-04 17:01:44
+70,Dove Body Love Body Lotion 400ml,DOVE,6,Chăm Sóc Cơ Thể,180000.0,110,9,1,2026-06-04 17:01:44
+71,Sublime Bronze Self-Tanning Serum,L'ORÉAL,6,Chăm Sóc Cơ Thể,185000.0,150,8,1,2026-06-04 17:01:44
+72,Crème de Corps Soy Milk Honey Lotion,KIEHL'S,6,Chăm Sóc Cơ Thể,650000.0,175,11,1,2026-06-04 17:01:44
+73,Brazilian Bum Bum Cream 240ml,SOL DE JANEIRO,6,Chăm Sóc Cơ Thể,890000.0,0,13,1,2026-06-04 17:01:44
+74,Eucerin Advanced Repair Cream 454g,EUCERIN,6,Chăm Sóc Cơ Thể,480000.0,10,14,1,2026-06-04 17:01:44
+75,Aveeno Daily Moisturizing Lotion 350ml,AVEENO,6,Chăm Sóc Cơ Thể,280000.0,133,11,1,2026-06-04 17:01:44
+76,The Body Shop Body Yogurt Mango 200ml,THE BODY SHOP,6,Chăm Sóc Cơ Thể,280000.0,74,9,1,2026-06-04 17:01:44
+77,Rapid Relief Body Cream 200ml,LA ROCHE-POSAY,6,Chăm Sóc Cơ Thể,520000.0,140,0,1,2026-06-04 17:01:44
+78,Bath Body Oil 200ml,AESOP,6,Chăm Sóc Cơ Thể,950000.0,301,11,1,2026-06-04 17:01:44

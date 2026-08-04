@@ -1,0 +1,148 @@
+.km-container {
+    padding: 24px;
+    background: #f7f3f1;
+    min-height: calc(100vh - 60px);
+}
+
+.km-section {
+    background: #fff;
+    border: 1px solid #ede4e0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.km-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ede4e0;
+    padding-bottom: 12px;
+}
+
+.km-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.km-config-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.km-config-card {
+    background: #f5f0ee;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.km-config-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #9e8e82;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.km-config-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1a1208;
+}
+
+.km-config-sub {
+    font-size: 0.8rem;
+    color: #9e8e82;
+}
+
+@media (max-width: 1100px) {
+    .km-config-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Khung Popup Modal */
+.km-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.km-modal.active {
+    display: flex;
+    animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.km-modal-content {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.km-modal-lg {
+    max-width: 600px;
+}
+
+.km-modal-content h3 {
+    margin-bottom: 20px;
+    font-family: var(--ff-display);
+    font-size: 1.5rem;
+    color: var(--charcoal);
+}
+
+.km-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.km-form-group {
+    margin-bottom: 16px;
+}
+
+.km-form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.km-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: var(--ff-body);
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.km-input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(196,98,110,0.1);
+}
+
+.km-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}

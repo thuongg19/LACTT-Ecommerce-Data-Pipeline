@@ -1,0 +1,386 @@
+/* =============================================
+   LACTT — cart-drawer.css
+   Styles cho mini cart drawer và cart badge
+   ============================================= */
+
+/* ── Cart count badge ── */
+.cart-count {
+  position: absolute;
+  top: 0; right: 0;
+  transform: translate(30%, -30%);
+  background: #d99aa0;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+  font-family: 'DM Sans', sans-serif;
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+}
+
+.cart-count.has-items {
+  transform: translate(30%, -30%) scale(1.1);
+}
+
+/* Badge bounce khi thêm */
+@keyframes cartBadgePop {
+  0%   { transform: translate(30%, -30%) scale(1); }
+  50%  { transform: translate(30%, -30%) scale(1.5); }
+  100% { transform: translate(30%, -30%) scale(1.1); }
+}
+
+.cart-btn.cart-bounce .cart-count {
+  animation: cartBadgePop 0.5s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ── Overlay ── */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 10, 0.45);
+  z-index: 1099;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Drawer ── */
+.cart-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(420px, 100vw);
+  height: 100vh;
+  background: #fff;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+/* ── Header ── */
+.cd-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid #f0eae8;
+  flex-shrink: 0;
+}
+
+.cd-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1208;
+  margin: 0;
+  flex: 1;
+}
+
+.cd-count-label {
+  font-size: 0.78rem;
+  color: #9e8e82;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cd-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9e8e82;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.cd-close:hover {
+  background: #f5f0ee;
+  color: #1a1208;
+}
+
+/* ── Body (scroll area) ── */
+.cd-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #e8ddd9 transparent;
+}
+
+.cd-body::-webkit-scrollbar { width: 4px; }
+.cd-body::-webkit-scrollbar-track { background: transparent; }
+.cd-body::-webkit-scrollbar-thumb { background: #e8ddd9; border-radius: 2px; }
+
+/* ── Empty state ── */
+.cd-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 280px;
+  gap: 10px;
+  color: #9e8e82;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cd-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.cd-empty p {
+  margin: 0;
+  font-size: 1rem;
+  color: #5c4c42;
+  font-weight: 500;
+}
+
+.cd-empty-sub {
+  font-size: 0.84rem !important;
+  color: #9e8e82 !important;
+  font-weight: 400 !important;
+}
+
+/* ── Cart item ── */
+.cd-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f5f0ee;
+  transition: background 0.2s;
+}
+
+.cd-item:hover { background: #faf8f7; }
+
+@keyframes cdSlideOut {
+  to { opacity: 0; transform: translateX(40px); max-height: 0; padding: 0 24px; }
+}
+
+.cd-item-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fdf5f2 0%, #f5e8e4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.cd-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cd-item-brand {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d99aa0;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0 0 2px;
+  font-weight: 500;
+}
+
+.cd-item-name {
+  font-size: 0.85rem;
+  color: #1a1208;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.cd-item-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c4626e;
+  margin: 0 0 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cd-item-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cd-qty-btn {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #e8ddd9;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5c4c42;
+  transition: all 0.15s;
+}
+
+.cd-qty-btn:hover {
+  border-color: #d99aa0;
+  background: #fdf5f2;
+  color: #c4626e;
+}
+
+.cd-qty-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1208;
+  min-width: 20px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cd-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c0b0aa;
+  padding: 4px;
+  margin-left: auto;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.cd-remove:hover { color: #c4626e; }
+
+/* ── Footer ── */
+.cd-footer {
+  border-top: 1px solid #f0eae8;
+  padding: 18px 24px 24px;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.cd-subtotal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #5c4c42;
+}
+
+.cd-subtotal {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1208;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.cd-ship-note {
+  font-size: 0.78rem;
+  margin: 0 0 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.cd-ship-warn {
+  background: #fff8ec;
+  color: #9a6a20;
+}
+
+.cd-ship-ok {
+  background: #edf7f3;
+  color: #2d7a5f;
+}
+
+.cd-btn-cart,
+.cd-btn-buy {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.cd-btn-cart {
+  border: 1.5px solid #d99aa0;
+  background: #fff;
+  color: #c4626e;
+}
+
+.cd-btn-cart:hover {
+  background: #fdf5f2;
+  border-color: #c4626e;
+}
+
+.cd-btn-buy {
+  border: none;
+  background: linear-gradient(135deg, #c4626e 0%, #d99aa0 100%);
+  color: #fff;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px rgba(196, 98, 110, 0.3);
+}
+
+.cd-btn-buy:hover {
+  background: linear-gradient(135deg, #b55562 0%, #ca8891 100%);
+  box-shadow: 0 6px 20px rgba(196, 98, 110, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .cart-drawer { width: 100vw; }
+  .cd-header { padding: 18px 16px 14px; }
+  .cd-item { padding: 14px 16px; }
+  .cd-footer { padding: 14px 16px 20px; }
+}
+/* FIX: ảnh thật trong drawer */
+.cd-item-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.item-emoji {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

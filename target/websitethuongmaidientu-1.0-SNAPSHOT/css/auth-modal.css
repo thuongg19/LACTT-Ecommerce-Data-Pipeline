@@ -1,0 +1,686 @@
+/* =============================================
+   LACTT — auth-modal.css
+   Modal Đăng nhập / Đăng ký
+   ============================================= */
+
+/* ── Overlay ── */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 10, 5, 0.65);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.auth-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Modal box ── */
+.auth-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.08);
+  transform: translateY(28px) scale(0.97);
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  position: relative;
+}
+.auth-overlay.open .auth-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* ── Dải màu đầu modal ── */
+.auth-modal-top {
+  background: linear-gradient(135deg, #1a1208 0%, #2d2010 60%, #c4626e 100%);
+  padding: 32px 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.auth-modal-top::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(217,154,160,0.15);
+}
+.auth-modal-top::after {
+  content: '';
+  position: absolute;
+  bottom: -20px; left: 60px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(196,98,110,0.12);
+}
+
+.auth-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.auth-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
+}
+.auth-modal-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  position: relative;
+  z-index: 1;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Nút đóng */
+.auth-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+  line-height: 1;
+}
+.auth-close:hover { background: rgba(255,255,255,0.22); color: #fff; }
+
+/* ── Tab chọn Login / Register ── */
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid #f0eae8;
+  background: #fff;
+}
+.auth-tab {
+  flex: 1;
+  padding: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #9e8e82;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.auth-tab:hover { color: #1a1208; }
+.auth-tab.active {
+  color: #c4626e;
+  border-bottom-color: #c4626e;
+  font-weight: 600;
+}
+
+/* ── Body form ── */
+.auth-body {
+  padding: 24px 32px 28px;
+}
+
+/* Panels */
+.auth-panel { display: none; }
+.auth-panel.active { display: block; }
+
+/* Social login */
+.auth-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.auth-social-btn {
+  flex: 1;
+  height: 42px;
+  border: 1.5px solid #e8ddd9;
+  border-radius: 9px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5c4c42;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.auth-social-btn:hover {
+  border-color: #d99aa0;
+  background: #fff8f9;
+}
+.auth-social-icon { font-size: 1.1rem; line-height: 1; }
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #f0eae8;
+}
+.auth-divider span {
+  font-size: 0.72rem;
+  color: #c0b0aa;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Form fields */
+.auth-field {
+  margin-bottom: 14px;
+}
+.auth-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #9e8e82;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 5px;
+  font-family: 'DM Sans', sans-serif;
+}
+.auth-input-wrap {
+  position: relative;
+}
+.auth-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 42px 0 14px;
+  border: 1.5px solid #e8ddd9;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: #1a1208;
+  background: #faf8f7;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.auth-input:focus {
+  border-color: #d99aa0;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(217,154,160,0.14);
+}
+.auth-input.err { border-color: #c4626e; box-shadow: 0 0 0 3px rgba(196,98,110,0.12); }
+.auth-input::placeholder { color: #c0b0aa; }
+
+.auth-input-icon {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0b0aa;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Toggle mật khẩu */
+.auth-toggle-pw {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0b0aa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.auth-toggle-pw:hover { color: #c4626e; }
+
+.auth-field-error {
+  font-size: 0.71rem;
+  color: #c4626e;
+  margin-top: 4px;
+  display: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.auth-field-error.show { display: block; }
+
+/* 2 cột họ tên */
+.auth-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Checkbox nhớ mật khẩu & điều khoản */
+.auth-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #9e8e82;
+  line-height: 1.5;
+}
+.auth-check-row input[type="checkbox"] {
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  accent-color: #c4626e;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.auth-check-row a { color: #c4626e; text-decoration: underline; }
+.auth-check-row .spacer { flex: 1; }
+.auth-forgot {
+  font-size: 0.78rem;
+  color: #c4626e;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.auth-forgot:hover { color: #b55562; }
+
+/* Submit button */
+.auth-submit {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #c4626e 0%, #d99aa0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.25s;
+  box-shadow: 0 6px 20px rgba(196,98,110,0.32);
+  position: relative;
+  overflow: hidden;
+}
+.auth-submit:hover {
+  background: linear-gradient(135deg, #b55562 0%, #ca8891 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(196,98,110,0.42);
+}
+.auth-submit:active { transform: translateY(0); }
+.auth-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.auth-submit .spinner {
+  display: none;
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto;
+}
+.auth-submit.loading .btn-label { display: none; }
+.auth-submit.loading .spinner { display: block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Switch tab link */
+.auth-switch {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.8rem;
+  color: #9e8e82;
+  font-family: 'DM Sans', sans-serif;
+}
+.auth-switch a {
+  color: #c4626e;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+/* ── Phần lợi ích đăng ký ── */
+.auth-benefits {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.auth-benefit-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: #5c4c42;
+  background: #faf8f7;
+  border: 1px solid #f0eae8;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Password strength ── */
+.pw-strength {
+  margin-top: 6px;
+  display: none;
+}
+.pw-strength.show { display: block; }
+.pw-strength-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: #f0eae8;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+.pw-strength-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease, background 0.3s ease;
+  width: 0%;
+}
+.pw-strength-label {
+  font-size: 0.68rem;
+  font-family: 'DM Sans', sans-serif;
+  color: #9e8e82;
+}
+
+/* ── Alert trong modal ── */
+.auth-alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 14px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+.auth-alert.show { display: flex; }
+.auth-alert.success { background: #edf7f3; color: #2d7a5f; border: 1px solid #c4e8d8; }
+.auth-alert.error   { background: #fdf0f0; color: #c4626e; border: 1px solid #f5d0d0; }
+.auth-alert.info    { background: #fff8ec; color: #9a6a20; border: 1px solid #f0ddb0; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .auth-modal-top { padding: 24px 20px 20px; }
+  .auth-body { padding: 20px 20px 24px; }
+  .auth-row { grid-template-columns: 1fr; }
+  .auth-social { flex-direction: column; }
+}
+/* =============================================
+   LACTT — auth-additions.css
+   CSS bổ sung cho:
+   1. Khung demo accounts trong modal đăng nhập
+   2. Thanh user status ở trang giỏ hàng
+   3. Nút đăng xuất
+   Nhúng SAU auth-modal.css
+   ============================================= */
+
+/* ══════════════════════════════════════════
+   DEMO ACCOUNTS HINT (trong modal login)
+══════════════════════════════════════════ */
+.auth-demo-hint {
+  background: linear-gradient(135deg, #fff8f0 0%, #fdf5f8 100%);
+  border: 1px solid #f0ddd6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.demo-hint-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9e8e82;
+  margin-bottom: 10px;
+}
+
+.demo-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.demo-acc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  background: #fff;
+  border: 1px solid #f0eae8;
+  border-radius: 8px;
+  cursor: default;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.demo-acc:hover {
+  border-color: #d99aa0;
+  box-shadow: 0 2px 8px rgba(196, 98, 110, 0.08);
+}
+
+.demo-acc-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.demo-acc-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.demo-acc-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1a1208;
+}
+
+.demo-acc-cred {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  color: #9e8e82;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demo-acc-fill {
+  background: linear-gradient(135deg, #c4626e 0%, #d99aa0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.demo-acc-fill:hover {
+  background: linear-gradient(135deg, #b55562 0%, #ca8891 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(196, 98, 110, 0.3);
+}
+
+/* ══════════════════════════════════════════
+   USER STATUS BAR — trang giỏ hàng
+   Thêm <div id="ghUserStatus" class="gh-user-status"></div>
+   vào đầu phần summary trong giohang.jsp
+══════════════════════════════════════════ */
+.gh-user-status {
+  display: none; /* JS sẽ show khi đăng nhập */
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #fdf5f8 0%, #fff8f0 100%);
+  border: 1px solid #f0ddd6;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.gh-user-avatar {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.gh-user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.gh-user-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1208;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gh-user-role {
+  font-size: 0.72rem;
+  color: #9e8e82;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.gh-user-points {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c4626e;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.gh-logout-btn {
+  background: none;
+  border: 1px solid #e8ddd9;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  color: #9e8e82;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.gh-logout-btn:hover {
+  border-color: #c4626e;
+  color: #c4626e;
+  background: #fff5f5;
+}
+
+/* ══════════════════════════════════════════
+   CHECKOUT BUTTON — trạng thái guest
+══════════════════════════════════════════ */
+#ghCheckoutBtn {
+  transition: all 0.2s;
+}
+
+/* Khi guest: nút đổi sang màu cam cảnh báo nhẹ */
+#ghCheckoutBtn:not(:disabled)[data-guest="true"] {
+  background: linear-gradient(135deg, #e67e22 0%, #f0a500 100%);
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.3);
+}
+
+/* Icon logged-in trên nút tài khoản header */
+.account-btn.logged-in,
+.user-btn.logged-in,
+[data-auth-btn].logged-in {
+  position: relative;
+}
+
+.account-btn.logged-in::after,
+.user-btn.logged-in::after,
+[data-auth-btn].logged-in::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: #27ae60;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .demo-acc-cred { display: none; }
+  .gh-user-points { display: none; }
+}
+/* =============================================
+   LACTT — auth-modal-fix.css
+   Patch: modal scroll + height limit
+   Nhúng SAU auth-modal.css
+   ============================================= */
+
+/* Giới hạn chiều cao modal và cho phép cuộn */
+.auth-modal {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Phần top (logo + title) cố định, không cuộn */
+.auth-modal-top { flex-shrink: 0; }
+
+/* Tabs cố định */
+.auth-tabs { flex-shrink: 0; }
+
+/* Body cuộn được */
+.auth-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: #e8ddd9 transparent;
+}
+.auth-body::-webkit-scrollbar { width: 4px; }
+.auth-body::-webkit-scrollbar-track { background: transparent; }
+.auth-body::-webkit-scrollbar-thumb { background: #e8ddd9; border-radius: 2px; }
+
+/* Mobile: modal chiếm gần full màn hình */
+@media (max-height: 700px) {
+  .auth-modal { max-height: 95vh; }
+  .auth-modal-top { padding: 20px 24px 16px; }
+  .auth-body { padding: 16px 24px 20px; }
+}

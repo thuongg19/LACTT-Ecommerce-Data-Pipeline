@@ -1,0 +1,8 @@
+pandas
+sqlalchemy
+pymysql
+mysql-connector-python
+pyarrow
+duckdb
+python-dotenv
+faker
